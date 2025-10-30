@@ -16,6 +16,7 @@ export function generateChatTitle(messages: string[]): string {
     if (messages[1] && messages[1] === 'Hello! How can I assist you today?', 'How many orders are pending?' ) {
         return messages[2].slice(0, 30) + (messages[2].length > 30 ? '...' : '');
     } else {
-        return messages[0].slice(0, 30) + (messages[0].length > 30 ? '...' : '');
+        const text = messages[0] || 'New Chat';
+        return text.slice(0, 30) + (text.length > 30 ? '...' : '');
     }
 }
